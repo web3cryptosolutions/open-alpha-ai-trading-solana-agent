@@ -1,0 +1,21 @@
+{
+  "name": "@openalpha/strategy-engine",
+  "version": "0.1.0",
+  "description": "Plugin architecture + reference strategies (momentum, mean-reversion, volume) for Open Alpha.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo"
+  },
+  "dependencies": {
+    "@openalpha/types": "workspace:*"
+  }
+}

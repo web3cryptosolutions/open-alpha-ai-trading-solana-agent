@@ -1,0 +1,21 @@
+{
+  "name": "@openalpha/wallet-tracker",
+  "version": "0.1.0",
+  "description": "Smart-money engine: track wallets, score profitability, emit copy/early-buyer signals. (interface + stub)",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo"
+  },
+  "dependencies": {
+    "@openalpha/types": "workspace:*"
+  }
+}

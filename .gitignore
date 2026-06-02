@@ -1,0 +1,38 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# build output
+dist/
+.next/
+out/
+*.tsbuildinfo
+
+# turbo
+.turbo/
+
+# env / secrets — NEVER commit keys or keypairs
+.env
+.env.local
+.env.*.local
+*.keypair.json
+wallet.json
+
+# local agent state (mock + paper-trading data)
+.openalpha/
+data/*.json
+!data/.gitkeep
+
+# logs
+*.log
+logs/
+
+# os
+.DS_Store
+Thumbs.db
+
+# editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.claude/

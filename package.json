@@ -1,0 +1,42 @@
+{
+  "name": "open-alpha",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Open Alpha — the autonomous trading operating system for Solana. Explainable, modular, safe-by-default.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20.10.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.12.3",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "agent": "tsx examples/run-agent.ts",
+    "agent:backtest": "tsx examples/run-backtest.ts",
+    "dashboard": "pnpm --filter @openalpha/dashboard dev",
+    "api": "pnpm --filter @openalpha/api start",
+    "telegram": "pnpm --filter @openalpha/telegram start",
+    "discord": "pnpm --filter @openalpha/discord start",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "@openalpha/core-agent": "workspace:*",
+    "@openalpha/analytics": "workspace:*",
+    "@openalpha/simulation-engine": "workspace:*",
+    "@openalpha/types": "workspace:*",
+    "@types/node": "^22.9.0",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "turbo": "^2.3.0",
+    "typescript": "^5.7.2"
+  }
+}

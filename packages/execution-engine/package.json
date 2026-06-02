@@ -1,0 +1,21 @@
+{
+  "name": "@openalpha/execution-engine",
+  "version": "0.1.0",
+  "description": "Order execution behind one interface: paper executor today, Jupiter swap executor tomorrow.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo"
+  },
+  "dependencies": {
+    "@openalpha/types": "workspace:*"
+  }
+}

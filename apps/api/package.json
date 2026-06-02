@@ -1,0 +1,24 @@
+{
+  "name": "@openalpha/api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Tiny zero-dependency HTTP API exposing the agent's state to the dashboard, bots and external tools.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo"
+  },
+  "dependencies": {
+    "@openalpha/types": "workspace:*",
+    "@openalpha/memory-engine": "workspace:*",
+    "@openalpha/analytics": "workspace:*"
+  }
+}

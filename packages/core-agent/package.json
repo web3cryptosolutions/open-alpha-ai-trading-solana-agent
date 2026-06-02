@@ -1,0 +1,33 @@
+{
+  "name": "@openalpha/core-agent",
+  "version": "0.1.0",
+  "description": "The autonomous agent: orchestrates discovery, risk, strategy, decision, execution, memory and learning.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo"
+  },
+  "dependencies": {
+    "@openalpha/types": "workspace:*",
+    "@openalpha/token-discovery": "workspace:*",
+    "@openalpha/risk-engine": "workspace:*",
+    "@openalpha/strategy-engine": "workspace:*",
+    "@openalpha/execution-engine": "workspace:*",
+    "@openalpha/memory-engine": "workspace:*",
+    "@openalpha/analytics": "workspace:*"
+  },
+  "peerDependencies": {
+    "@anthropic-ai/sdk": "^0.32.1"
+  },
+  "peerDependenciesMeta": {
+    "@anthropic-ai/sdk": { "optional": true }
+  }
+}

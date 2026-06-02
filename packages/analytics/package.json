@@ -1,0 +1,21 @@
+{
+  "name": "@openalpha/analytics",
+  "version": "0.1.0",
+  "description": "Performance analytics: PnL, win rate, equity curve, drawdown, expectancy.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo"
+  },
+  "dependencies": {
+    "@openalpha/types": "workspace:*"
+  }
+}

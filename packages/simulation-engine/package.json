@@ -1,0 +1,23 @@
+{
+  "name": "@openalpha/simulation-engine",
+  "version": "0.1.0",
+  "description": "Backtesting & forward-testing harness. Drives the agent over a deterministic clock and scores it.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo"
+  },
+  "dependencies": {
+    "@openalpha/types": "workspace:*",
+    "@openalpha/core-agent": "workspace:*",
+    "@openalpha/analytics": "workspace:*"
+  }
+}

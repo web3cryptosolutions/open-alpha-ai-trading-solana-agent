@@ -1,0 +1,21 @@
+{
+  "name": "@openalpha/social-intelligence",
+  "version": "0.1.0",
+  "description": "Social signal engine: X/Telegram/Discord mention velocity & sentiment as a discovery source. (interface + stub)",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo"
+  },
+  "dependencies": {
+    "@openalpha/types": "workspace:*"
+  }
+}

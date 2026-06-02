@@ -1,0 +1,37 @@
+# Full stack: agent loop + JSON API + dashboard, sharing one ./data volume.
+services:
+  agent:
+    build: .
+    command: pnpm agent
+    environment:
+      - OPENALPHA_MODE=mock
+      - LOOP=1
+      - DECISION_ENGINE=${DECISION_ENGINE:-rules}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+    volumes:
+      - ./data:/app/data
+
+  api:
+    build: .
+    command: pnpm api
+    environment:
+      - PORT=4318
+      - OPENALPHA_DATA_DIR=/app/data
+    ports:
+      - "4318:4318"
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - agent
+
+  dashboard:
+    build: .
+    command: pnpm dashboard
+    environment:
+      - OPENALPHA_DATA_DIR=/app/data
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - agent

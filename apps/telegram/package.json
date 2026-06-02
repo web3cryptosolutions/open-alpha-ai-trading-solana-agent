@@ -1,0 +1,17 @@
+{
+  "name": "@openalpha/telegram",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Telegram control surface for the Open Alpha agent. Zero-dependency Bot API client.",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/bot.ts",
+    "start": "tsx src/bot.ts",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo"
+  },
+  "dependencies": {
+    "@openalpha/api": "workspace:*",
+    "@openalpha/types": "workspace:*"
+  }
+}

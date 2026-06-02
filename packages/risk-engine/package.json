@@ -1,0 +1,21 @@
+{
+  "name": "@openalpha/risk-engine",
+  "version": "0.1.0",
+  "description": "Composable, explainable rug/risk checks that produce a 0-100 risk score for any Solana token.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo"
+  },
+  "dependencies": {
+    "@openalpha/types": "workspace:*"
+  }
+}
