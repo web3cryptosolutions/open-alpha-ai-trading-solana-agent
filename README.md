@@ -48,7 +48,7 @@
 
 ```bash
 # 1. Clone & install (Node ≥ 20, pnpm via corepack)
-git clone https://github.com/your-org/open-alpha && cd open-alpha
+git clone https://github.com/web3cryptosolutions/open-alpha-ai-trading-solana-agent && cd open-alpha-ai-trading-solana-agent
 corepack enable && pnpm install
 
 # 2. Run a 24h backtest on the deterministic mock market (no keys, no funds)
